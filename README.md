@@ -1,5 +1,3 @@
-# My-workplace-
-obs+android+github workflow setup
 <p align="center">
   <img src="logo newpaper.png" width="200">
 </p>
