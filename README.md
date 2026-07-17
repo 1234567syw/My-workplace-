@@ -1,3 +1,7 @@
+<marquee direction="right" behavior="scroll" scrollamount="5" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); padding: 10px; color: white; font-weight: bold; font-size: 16px; margin-bottom: 10px;">
+  🔥 Breaking News Updates | Latest Stories | Fact-Checking | Multi-Camera Coverage 🔥
+</marquee>
+
 <p align="center">
   <img src="logo newpaper.png" width="200">
 </p>
@@ -16,7 +20,7 @@
 ---
 
 ## 📌 About This Channel
-NewsExplorerHindi ek modern news‑explorer channel hai jahan har khabar ko analyse, question, understand ke approach se decode kiya jata hai. Hum breaking news, in-depth analysis aur fact-checking ke through sachchai ko samne laate hain.
+NewsExplorerHindi ek modern news‑explorer channel hai jahan har khabar ko analyse, question, understand ke approach se decode kiya jata hai. Hum breaking news, in-depth analysis aur fact-checking ke liye dedicated hain. Har source ko verify karke authentic information provide karte hain.
 
 ---
 
@@ -290,6 +294,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<p align="center">
-  Made with ❤️ by NewsExplorerHindi Team
-</p>
+<marquee direction="left" behavior="scroll" scrollamount="4" style="background: linear-gradient(90deg, #764ba2 0%, #667eea 100%); padding: 15px; color: white; font-weight: bold; font-size: 14px; margin-top: 20px; border-top: 2px solid white; border-bottom: 2px solid white;">
+  ✨ Made with ❤️ by NewsExplorerHindi Team | Spreading Truth Through Technology | Fact-Checking for Everyone | Stay Informed, Stay Updated ✨
+</marquee>
