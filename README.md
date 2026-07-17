@@ -16,7 +16,7 @@
 ---
 
 ## 📌 About This Channel
-NewsExplorerHindi ek modern news‑explorer channel hai jahan har khabar ko analyse, question, understand ke approach se decode kiya jata hai. Hum breaking news, in-depth analysis aur fact-checking ke through aapko satya aur transparent information provide karte hain.
+NewsExplorerHindi ek modern news‑explorer channel hai jahan har khabar ko analyse, question, understand ke approach se decode kiya jata hai. Hum breaking news, in-depth analysis aur fact-checking ke through sachchai ko samne laate hain.
 
 ---
 
@@ -27,6 +27,7 @@ NewsExplorerHindi ek modern news‑explorer channel hai jahan har khabar ko anal
 - 🌐 **Multi-source Coverage**: Alag-alag sources se comparison
 - 🎯 **Categorized News**: Politics, Technology, Sports, Business, Entertainment
 - 💬 **User Comments**: Samaj se interact karein
+- 📹 **Multi-Camera Capture**: Real-time video coverage se multiple sources
 
 ---
 
@@ -38,6 +39,7 @@ Make sure aapke paas following installed ho:
 - Node.js 14.0 ya usse upar
 - Git
 - pip (Python package manager)
+- OpenCV (cv2) - Multi-camera support ke liye
 
 ### Step 2: Repository Clone Kare
 ```bash
@@ -120,11 +122,140 @@ superuser credentials se login kare
 
 ---
 
+## 📹 Multi-Camera Capture Frame
+
+### Overview
+Multi-Camera Capture Frame feature multiple video sources ko simultaneously capture aur display karta hai. Ye live events, conferences, aur breaking news coverage ke liye ideal hai.
+
+### Features
+- **Multi-Stream Support**: 2-4 camera feeds ko ek saath display kare
+- **Real-time Processing**: Live video processing aur analysis
+- **Frame Synchronization**: Sabhi cameras ke frames ko sync rahe
+- **Quality Control**: Adjustable resolution aur bitrate
+- **Recording**: Multi-stream recording aur playback
+
+### Setup Multi-Camera System
+
+#### Step 1: Camera Configuration
+```bash
+# config/camera_config.json banayein
+{
+  "cameras": [
+    {
+      "id": 0,
+      "name": "Main Camera",
+      "source": 0,
+      "resolution": "1920x1080",
+      "fps": 30
+    },
+    {
+      "id": 1,
+      "name": "Side Camera",
+      "source": 1,
+      "resolution": "1280x720",
+      "fps": 30
+    },
+    {
+      "id": 2,
+      "name": "Wide Angle",
+      "source": 2,
+      "resolution": "1280x720",
+      "fps": 30
+    }
+  ]
+}
+```
+
+#### Step 2: Initialize Multi-Camera Capture
+```bash
+python manage.py init_camera_system --config config/camera_config.json
+```
+
+#### Step 3: Start Live Stream
+```bash
+# Terminal se multi-camera stream start kare
+python manage.py start_multicam_stream --config config/camera_config.json
+
+# Ya admin panel se:
+# Dashboard > Live Streams > Start Multi-Camera Capture
+```
+
+#### Step 4: Monitoring
+```bash
+# Real-time monitoring dashboard
+http://localhost:8000/camera/dashboard
+
+# Individual camera feeds
+http://localhost:8000/camera/feed/0  # Main Camera
+http://localhost:8000/camera/feed/1  # Side Camera
+http://localhost:8000/camera/feed/2  # Wide Angle
+```
+
+### Usage Examples
+
+#### Python API Se Multi-Camera Control
+```python
+from camera.multi_capture import MultiCameraCapture
+
+# Initialize multi-camera system
+capture = MultiCameraCapture(config_path='config/camera_config.json')
+
+# Start capturing
+capture.start_all_cameras()
+
+# Get frames from all cameras
+while True:
+    frames = capture.get_frames()
+    # Process frames...
+    
+# Stop capturing
+capture.stop_all_cameras()
+```
+
+#### Web Interface Se Control
+1. Dashboard mein jaaye: `http://localhost:8000/camera/dashboard`
+2. "Start Multi-Camera" button click kare
+3. Live preview dekhen
+4. Recording start/stop kare
+5. Settings adjust kare (resolution, fps, etc.)
+
+### Advanced Features
+
+#### Frame Synchronization
+```bash
+# Ensure all cameras capture frames at same time
+python manage.py sync_camera_frames --method=hardware_trigger
+```
+
+#### Video Processing
+```bash
+# Real-time analysis aur overlays add kare
+python manage.py process_multicam_video --effect=timestamp --effect=watermark
+```
+
+#### Storage & Recording
+```bash
+# Multi-camera recording configure kare
+python manage.py configure_recording \
+  --output_path=/media/recordings \
+  --format=mp4 \
+  --quality=high \
+  --auto_cleanup=true
+```
+
+#### Playback
+- Recorded multi-camera sessions dekhen
+- Frame-by-frame comparison kare
+- Export individual camera feeds
+
+---
+
 ## 📚 Documentation
 - [API Documentation](./docs/API.md)
 - [Contributing Guide](./CONTRIBUTING.md)
 - [FAQ](./docs/FAQ.md)
 - [Architecture](./docs/ARCHITECTURE.md)
+- [Multi-Camera Guide](./docs/MULTI_CAMERA.md)
 
 ---
 
